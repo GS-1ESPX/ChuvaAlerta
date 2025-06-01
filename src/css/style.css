@@ -1,0 +1,202 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #1D3557;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #1D3557;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .mobile-menu a {
+            padding: 0.5rem 0;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #457B9D;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+        }
+
+        /* Estilos do carrossel */
+        .carousel-container {
+            max-width: 100%;
+            height: 400px;
+            margin: 2rem auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-images {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 12s infinite;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            33% {
+                transform: translateX(0);
+            }
+
+            36% {
+                transform: translateX(-100%);
+            }
+
+            66% {
+                transform: translateX(-100%);
+            }
+
+            69% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(-200%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 250px;
+            }
+        }
+
+        footer {
+    background-color: #1D3557;
+    color: #F1FAEE;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+}
+
+footer .logo h2 {
+    font-size: 1.8rem;
+    color: #A8DADC;
+    margin-bottom: 0.5rem;
+}
+
+footer .logo p {
+    font-size: 1rem;
+    color: #F1FAEE;
+    max-width: 400px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: #F1FAEE;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #E63946;
+}
+
+.contato p {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #F1FAEE;
+}
+
+.legal p {
+    font-size: 0.9rem;
+    color: #A8DADC;
+    margin-top: 1rem;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
