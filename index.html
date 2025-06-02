@@ -2,130 +2,68 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChuvaAlerta</title>
-    <link rel="stylesheet" href="./src/css/style.css">
-    <style>
-        /* Estilos do carrossel */
-        .carousel-container {
-            max-width: 100%;
-            height: 400px;
-            margin: 2rem auto;
-            overflow: hidden;
-            position: relative;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .carousel-images {
-            display: flex;
-            width: 300%;
-            height: 100%;
-            animation: slide 12s infinite;
-        }
-
-        .carousel-images img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-
-            33% {
-                transform: translateX(0);
-            }
-
-            36% {
-                transform: translateX(-100%);
-            }
-
-            66% {
-                transform: translateX(-100%);
-            }
-
-            69% {
-                transform: translateX(-200%);
-            }
-
-            100% {
-                transform: translateX(-200%);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .carousel-container {
-                height: 250px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChuvaAlerta</title>
+  <link rel="stylesheet" href="./src/css/style.css" />
 </head>
 
 <body>
-    <header>
-        <div class="logo">🌧️ ChuvaAlerta</div>
-        <nav>
-            <a href="#problema">Problema</a>
-            <a href="#tecnologias">Tecnologias</a>
-            <a href="#objetivos">Objetivos</a>
-            <a href="#contato">Contato</a>
-        </nav>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">🌧️ ChuvaAlerta</div>
+    <nav>
+      <a href="#problema">Problema</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
 
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#problema">Problema</a>
+    <a href="#tecnologias">Tecnologias</a>
+    <a href="#objetivos">Objetivos</a>
+    <a href="#contato">Contato</a>
+  </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#problema">Problema</a>
-        <a href="#tecnologias">Tecnologias</a>
-        <a href="#objetivos">Objetivos</a>
-        <a href="#contato">Contato</a>
+  <!-- MAIN -->
+
+  <main>
+    <div class="carousel">
+      <button class="prev">&#10094;</button>
+      <img id="carousel-image" src="./src/assets/imgs/foto1.webp" alt="Imagem do Carrossel" />
+      <button class="next">&#10095;</button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">
+      <h2>🌧️ ChuvaAlerta</h2>
+      <p>Informação e socorro quando você mais precisa.</p>
     </div>
 
-    <!-- Carrossel -->
-    <div class="carousel-container">
-        <div class="carousel-images">
-            <img src="https://source.unsplash.com/1600x400/?flood" alt="Enchente 1">
-            <img src="https://source.unsplash.com/1600x400/?rain" alt="Enchente 2">
-            <img src="https://source.unsplash.com/1600x400/?city,storm" alt="Enchente 3">
-        </div>
+    <div class="footer-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato">Contato</a>
     </div>
 
-    <footer>
-        <div class="logo">
-            <h2>🌧️ ChuvaAlerta</h2>
-            <p>Informação e socorro quando você mais precisa.</p>
-        </div>
+    <div class="contato">
+      <p>📞 Defesa Civil: 199</p>
+    </div>
 
-        <div class="footer-links">
-            <a href="#sobre">Sobre</a>
-            <a href="#tecnologias">Tecnologias</a>
-            <a href="#beneficios">Benefícios</a>
-            <a href="#contato">Contato</a>
-        </div>
-
-        <div class="contato">
-            <p>📞 Defesa Civil: 199</p>
-        </div>
-
-        <div class="legal">
-            <p>© 2025 ChuvaAlerta. Projeto educacional. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("mobileMenu");
-            menu.classList.toggle("show");
-        }
-    </script>
+    <div class="legal">
+      <p>© 2025 ChuvaAlerta. Projeto educacional. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 </body>
-
+<script src="src/script/script.js"></script>
 </html>
