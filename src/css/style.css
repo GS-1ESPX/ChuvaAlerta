@@ -143,6 +143,36 @@ button:hover {
     max-height: 40%;
     display: flex;
 }
+/* seção um */
+#secao1{
+    color: #000000;
+    background-color: #D5D2FF;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap:1rem;
+}
+
+#secao1 strong{
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+#pitch{
+    width:80%;
+    height:29rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    align-self: center;
+}
+
+#pitch iframe{
+    width:100%;
+    height: 85%;
+}
 
 /* seção seis pt.1  */
 #seis1 {
