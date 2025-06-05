@@ -2,68 +2,115 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ChuvaAlerta</title>
-  <link rel="stylesheet" href="./src/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChuvaAlerta</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <header>
-    <div class="logo">🌧️ ChuvaAlerta</div>
-    <nav>
-      <a href="#problema">Problema</a>
-      <a href="#tecnologias">Tecnologias</a>
-      <a href="#objetivos">Objetivos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">🌧️ ChuvaAlerta</div>
+        <nav>
+            <a href="#problema">Problema</a>
+            <a href="#tecnologias">Tecnologias</a>
+            <a href="#objetivos">Objetivos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#problema">Problema</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#contato">Contato</a>
     </div>
-  </header>
+    <!-- fim navbar  -->
+    <!-- MAIN -->
+    <main>
+        <!-- CARROSSEL  -->
+        <div class="carousel">
+            <button class="prev">&#10094;</button>
+            <img id="carousel-image" src="./src/assets/imgs/foto1.webp" alt="Imagem do Carrossel" />
+            <button class="next">&#10095;</button>
+        </div>
+        <!-- FIM CARROSSEL  -->
+         <img id="transicao" src="src/assets/icons/Group 22.svg" alt="transição da página">
+        <section class="section" id="seis1">
+            <div class="esquerda">
+                <strong>Peça Socorro</strong>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat fuga aperiam sit facere voluptatem
+                    blanditiis at doloribus labore, voluptas iusto earum corrupti perspiciatis consectetur expedita,
+                    maxime qui. Temporibus, in pariatur?</p>
+            </div>
+            <div class="direita">
+                <form id="form" style="width:50%;display:flex; flex-direction:column; gap:10px;">
+                    <label for="prod">Nome: </label>
+                    <input class="campo" type="text" id="nome">
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#problema">Problema</a>
-    <a href="#tecnologias">Tecnologias</a>
-    <a href="#objetivos">Objetivos</a>
-    <a href="#contato">Contato</a>
-  </div>
+                    <label for="price">Endereço: </label>
+                    <input class="campo" type="text" id="local">
+                    <p style="text-decoration:underline; cursor:pointer; font-size:0.85rem; margin-top:-5px;">Não sei
+                        onde estou</p>
 
-  <!-- MAIN -->
+                    <label>Onde a água está batendo?</label>
+                    <select class="campo" id="categoria">
+                        <option value="Canela">Canela</option>
+                        <option value="Joelho">Joelho</option>
+                        <option value="Cintura">Cintura</option>
+                        <option value="Peito">Peito</option>
+                    </select>
 
-  <main>
-    <div class="carousel">
-      <button class="prev">&#10094;</button>
-      <img id="carousel-image" src="./src/assets/imgs/foto1.webp" alt="Imagem do Carrossel" />
-      <button class="next">&#10095;</button>
-    </div>
-  </main>
+                    <button id="btnEnviar">Enviar</button>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="logo">
-      <h2>🌧️ ChuvaAlerta</h2>
-      <p>Informação e socorro quando você mais precisa.</p>
-    </div>
+                    <p id="textErro"></p>
 
-    <div class="footer-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#tecnologias">Tecnologias</a>
-      <a href="#beneficios">Benefícios</a>
-      <a href="#contato">Contato</a>
-    </div>
+                    <div id="divEstoque">
+                    </div>
 
-    <div class="contato">
-      <p>📞 Defesa Civil: 199</p>
-    </div>
+                </form>
+            </div>
+        </section>
+        <div class="section" id="seis2">
+            <strong>Cuidado nessas áreas</strong>
+            <img src="src/assets/imgs/foto1.webp" alt="teste">
+        </div>
+        <img id="transicao" src="src/assets/icons/Group 3.svg" alt="transição da página">
+    </main>
+    <!-- FIM MAIN  -->
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo">
+            <h2>🌧️ ChuvaAlerta</h2>
+            <p>Informação e socorro quando você mais precisa.</p>
+        </div>
 
-    <div class="legal">
-      <p>© 2025 ChuvaAlerta. Projeto educacional. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+        <div class="footer-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#tecnologias">Tecnologias</a>
+            <a href="#beneficios">Benefícios</a>
+            <a href="#contato">Contato</a>
+        </div>
+
+        <div class="contato">
+            <p>📞 Defesa Civil: 199</p>
+        </div>
+
+        <div class="legal">
+            <p>© 2025 ChuvaAlerta. Projeto educacional. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <!-- FIM FOOTER  -->
 </body>
 <script src="src/script/script.js"></script>
+
 </html>
