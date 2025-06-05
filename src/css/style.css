@@ -149,7 +149,7 @@ button:hover {
     background-color: #D5D2FF;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 2rem 0 2rem;
     gap:1rem;
 }
 
@@ -173,6 +173,89 @@ button:hover {
     width:100%;
     height: 85%;
 }
+
+#secao1::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 5rem;
+    margin-left: calc(-50vw + 50%);
+    background: linear-gradient(to bottom, #D5D2FF, #457B9D);
+}
+
+/* seção dois  */
+#secao2{
+    color: #ffffff;
+    background-color: #457B9D;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 0 2rem 2rem ;
+    gap:1rem;
+}
+
+#secao2 strong{
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+#secao2 .esquerda {
+    width: 50%;
+    min-height: 100%;
+    padding: 2rem;
+    padding-left: 2.5rem;
+    text-align: justify;
+    font-size: 1.20rem;
+}
+
+#secao2 .esquerda strong {
+    display: block;
+    font-size: 1.7rem;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+#secao2 .direita {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    min-height: 100%;
+    gap:1.5rem;
+    padding: 1rem 2rem 1rem 1rem;
+}
+
+
+.item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    color: #1D3557;
+    padding: 1rem;
+    width:100%;
+    height:100%;
+    text-align: center;
+}
+
+.item strong {
+    display: block;
+    font-size: 1rem;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.item p {
+    font-size: 1.3rem;
+}
+
+
 
 /* seção seis pt.1  */
 #seis1 {
