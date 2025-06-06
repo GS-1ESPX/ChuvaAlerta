@@ -1,5 +1,5 @@
-# Lucas
-# Pedro
+# Lucas Santana Silva - RM: 566261
+# Pedro Henrique Lamin Rodrigues - RM: 566379
 
 
 from flask import Flask, request, jsonify
