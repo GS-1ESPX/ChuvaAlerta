@@ -1,3 +1,7 @@
+# Lucas
+# Pedro
+
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -5,10 +9,14 @@ app = Flask(__name__)
 CORS(app)
 
 grav = []
+
+# Função principal
 @app.route('/index', methods=['POST'])
 def main():
 
+# Busca o formulário que o usuário enviou
     altura = request.form.get('altura', '')
+# Estruturas condicionais
     if altura == 'Canela':
         gravidade = 'Baixa prioridade, defesa cívil acionada'
     elif altura == 'Joelho':
@@ -21,12 +29,17 @@ def main():
         gravidade = 'Inválido'
 
     grav.append(gravidade)
+
+# Chama a função 'calculos' abaixo
     calculos()
 
+# Transforma 'gravidade' em JSON para enviar de volta ao front-end
     return jsonify({'gravidade': gravidade})
 
 
 def calculos():
+
+# Estruturas de repetição para fazer a soma dos chamados por categoria
     baixa = []
     for a in grav:
         if a == "Baixa prioridade, defesa cívil acionada":
@@ -50,6 +63,7 @@ def calculos():
     print(f"Total de casos críticos: {len(critica)}")
 
 
+# Roda o código caso esse arquivo seja rodado diretamente e não importado
 if __name__ == "__main__":
     app.run(debug=True)
 
