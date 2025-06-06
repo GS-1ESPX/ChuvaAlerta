@@ -1,7 +1,6 @@
 # Lucas Santana Silva - RM: 566261
 # Pedro Henrique Lamin Rodrigues - RM: 566379
 
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -36,9 +35,9 @@ def main():
 # Transforma 'gravidade' em JSON para enviar de volta ao front-end
     return jsonify({'gravidade': gravidade})
 
-
+@app.route('/index', methods=['POST'])
 def calculos():
-
+    loc = request.form.get('local', '')
 # Estruturas de repetição para fazer a soma dos chamados por categoria
     baixa = []
     for a in grav:
@@ -57,6 +56,7 @@ def calculos():
         if d == "Crítica, defesa cívil a caminho":
             critica.append(d)
 
+    print(f"Endereço do chamado mais recente: {loc}")
     print(f"Total de casos de baixa prioridade: {len(baixa)}")
     print(f"Total de casos de média prioridade: {len(media)}")
     print(f"Total de casos de alta prioridade: {len(alta)}")

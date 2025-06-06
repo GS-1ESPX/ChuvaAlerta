@@ -20,13 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById("form").addEventListener("submit", async (event) => {
     event.preventDefault();
     const altura = document.getElementById("categoria").value;
+    const loc = document.getElementById("local").value;
 
     const form = new FormData();
     form.append('altura', altura);
+    form.append('local', loc);
     const resposta = await fetch("http://localhost:5000/index", {
       method: "POST",
       body: form
     });
+
 
     const resultado = await resposta.json();
     document.getElementById("textErro").innerHTML = "Gravidade: " + resultado.gravidade;
