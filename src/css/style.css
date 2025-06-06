@@ -255,6 +255,93 @@ button:hover {
     font-size: 1.3rem;
 }
 
+/* seção tres  */
+
+#secao3 {
+  background-color: #457B9D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.sobreposicao {
+  position: relative;
+  width: 95vw; /* Ocupa quase toda a largura da tela */
+  max-width: 1200px; /* Define um limite para telas muito grandes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sobreposicao img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.sobreposicao strong {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 2rem;
+  z-index: 2;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* seção beneficios/cinco  */
+#beneficios {
+    color: #ffffff;
+    width: 100%;
+    min-height: 30rem;
+    max-height: 40%;
+    background-color: #457B9D;
+    display: flex;
+    padding:2rem;
+    flex-direction: column;
+}
+
+#beneficios strong,h2 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.benefits-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background-color: #D5D2FF;
+  color: #1D3557;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+  transform: scale(1.03);
+}
+
 
 
 /* seção seis pt.1  */
