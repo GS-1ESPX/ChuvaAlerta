@@ -3,20 +3,26 @@ function toggleMenu() {
     menu.classList.toggle("show");
 }
 
-const images = [
-    './src/assets/imgs/foto1.webp',
-    './src/assets/imgs/foto2.webp',
-    './src/assets/imgs/foto3.webp'
-];
+window.addEventListener('DOMContentLoaded', () => {
+    const images = [
+      './src/assets/imgs/foto1.webp',
+      './src/assets/imgs/foto2.webp',
+      './src/assets/imgs/foto3.webp'
+    ];
 
-let agora = 0;
-const imageElement = document.getElementById('carousel-image');
+    let agora = 0;
+    const imageElement = document.getElementById('carousel-image');
 
-document.querySelector('.prev').addEventListener('click', () => {
-    agora = (agora - 1 + images.length) % images.length;
-    imageElement.src = images[agora];
-});
+    document.querySelector('.prev').addEventListener('click', () => {
+      agora = (agora - 1 + images.length) % images.length;
+      imageElement.src = images[agora];
+    });
 
+    document.querySelector('.next').addEventListener('click', () => {
+      agora = (agora + 1) % images.length;
+      imageElement.src = images[agora];
+    });
+  });
 
 const themes = ['theme-default', 'theme-dark', 'theme-sepia'];
   let currentThemeIndex = 0;
@@ -24,32 +30,43 @@ const themes = ['theme-default', 'theme-dark', 'theme-sepia'];
   const body = document.body;
   const btn = document.getElementById('theme-toggle');
 
-  // Inicializa com o tema padrão
   body.classList.add(themes[currentThemeIndex]);
-
   btn.addEventListener('click', () => {
-    // Remove a classe do tema atual
     body.classList.remove(themes[currentThemeIndex]);
-
-    // Incrementa índice do tema (loopando)
     currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-
-    // Adiciona a nova classe do tema
     body.classList.add(themes[currentThemeIndex]);
   });
 
-// Validação de formulário
-function validarFormulario() {
-  const nome = document.getElementById('nome').value;
-  const email = document.getElementById('email').value;
-  if (!nome || !email) {
-    alert('Preencha todos os campos.');
-    return false;
-  }
-  return true;
-}
+const form = document.getElementById('form');
+  const nome = document.getElementById('nome');
+  const local = document.getElementById('local');
+  const categoria = document.getElementById('categoria');
 
-// Quiz
+  form.addEventListener('submit', function(event) {
+    const nomeVal = nome.value.trim();
+    const localVal = local.value.trim();
+    const categoriaVal = categoria.value;
+
+    let errors = [];
+
+    if (!nomeVal) {
+      errors.push('Por favor, preencha o campo Nome.');
+    }
+
+    if (!localVal) {
+      errors.push('Por favor, preencha o campo Endereço.');
+    }
+
+    if (!categoriaVal) {
+      errors.push('Por favor, selecione onde a água está batendo.');
+    }
+
+    if (errors.length > 0) {
+      event.preventDefault(); // Impede o envio do form
+      alert(errors.join('\n'));
+    }
+  });
+
 const perguntas = [
   { pergunta: 'O que é um alagamento?', resposta: 'Acúmulo de água em vias públicas' },
   { pergunta: 'O que fazer em caso de enchente?', resposta: 'Procurar abrigo seguro' },
