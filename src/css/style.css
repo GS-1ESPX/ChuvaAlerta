@@ -276,9 +276,7 @@ button:hover {
 .sobreposicao {
     position: relative;
     width: 95vw;
-    /* Ocupa quase toda a largura da tela */
     max-width: 1200px;
-    /* Define um limite para telas muito grandes */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,7 +305,6 @@ button:hover {
     max-width: 90%;
 }
 
-/* seção beneficios/cinco  */
 #beneficios {
     color: #ffffff;
     width: 100%;
@@ -398,13 +395,17 @@ h2 {
 }
 
 /* forms  */
+
 .campo {
     border-radius: 15px;
-    border: 0;
+    border: 0;  
     width: 100%;
-    height: 2rem;
-    padding: 1rem;
+    height: auto;           
+    padding: 1rem;   
+    font-size: 1rem;
 }
+
+
 
 #btnEnviar {
     border-radius: 15px;
@@ -462,8 +463,6 @@ body.theme-default button:hover {
   background-color: #E63946;
 }
 
-/* === */
-
 body.theme-dark {
   background-color: #1E1E2F;
   color: #F1FAEE;
@@ -483,8 +482,6 @@ body.theme-dark button:hover {
   background-color: #A8DADC;
   color: #1E1E2F;
 }
-
-/* === */
 
 body.theme-sepia {
   background-color: #F4ECD8;
@@ -623,6 +620,7 @@ footer .logo p {
     margin-top: 1rem;
 }
 
+
 /* Tablets e abaixo (<= 1024px) */
 @media (max-width: 1024px) {
     #secao2 {
@@ -642,7 +640,6 @@ footer .logo p {
     }
 }
 
-/* Celulares médios e abaixo (<= 768px) */
 @media (max-width: 768px) {
     .benefits-container {
         grid-template-columns: 1fr;
@@ -682,7 +679,6 @@ footer .logo p {
     }
 }
 
-/* Celulares pequenos e abaixo (<= 480px) */
 @media (max-width: 480px) {
     header {
         flex-direction: column;
@@ -707,3 +703,4 @@ footer .logo p {
         max-height: 200px;
     }
 }
+
