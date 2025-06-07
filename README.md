@@ -19,3 +19,10 @@ autoridades já informando o local e o nível de água que o civil se encontra. 
 encaminha os dados a um script em Python para armazenar e tratar dados, como a 
 urgência do chamado. Futuramente, esses dados poderão ser encaminhados 
 automaticamente à Defesa Civil. 
+
+## Tecnologias usadas:
+
+- HTML
+- CSS
+- JavaScript
+- Python
