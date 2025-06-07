@@ -105,7 +105,9 @@ main {
 .carousel img {
     width: 100%;
     height: auto;
+    display: block;
     max-height: 600px;
+    object-fit: cover;
 }
 
 button.prev,
@@ -143,63 +145,56 @@ button:hover {
     max-height: 40%;
     display: flex;
 }
+
 /* seção um */
-#secao1{
+#secao1 {
     color: #000000;
     background-color: #D5D2FF;
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem 0 2rem;
-    gap:1rem;
+    align-items: center;
+    padding: 3rem;
+    gap: 1.5rem;
 }
 
-#secao1 strong{
+#secao1 strong {
     display: block;
     font-size: 2em;
     font-weight: bold;
     unicode-bidi: isolate;
 }
 
-#pitch{
-    width:80%;
-    height:29rem;
+#pitch {
+    width: 80%;
+    height: 29rem;
     background-color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     align-self: center;
 }
 
-#pitch iframe{
-    width:100%;
-    height: 85%;
-}
-
-#secao1::after {
-    content: "";
-    display: block;
-    position: relative;
-    width: 100vw;
-    height: 5rem;
-    margin-left: calc(-50vw + 50%);
-    background: linear-gradient(to bottom, #D5D2FF, #457B9D);
+#pitch iframe {
+    width: 100%;
+    height: 100%;
 }
 
 /* seção dois  */
-#secao2{
+#secao2 {
     color: #ffffff;
     background-color: #457B9D;
     display: flex;
     flex-direction: row;
-    padding: 2rem 0 2rem 2rem ;
-    gap:1rem;
+    padding: 2rem 0 2rem 2rem;
+    gap: 1rem;
 }
 
-#secao2 strong{
+#secao2 strong {
     display: block;
     font-size: 2em;
     font-weight: bold;
     unicode-bidi: isolate;
 }
+
 #secao2 .esquerda {
     width: 50%;
     min-height: 100%;
@@ -223,10 +218,10 @@ button:hover {
 #secao2 .direita {
     width: 50%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     min-height: 100%;
-    gap:1.5rem;
+    gap: 1.5rem;
     padding: 1rem 2rem 1rem 1rem;
 }
 
@@ -236,8 +231,8 @@ button:hover {
     border-radius: 12px;
     color: #1D3557;
     padding: 1rem;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
@@ -258,43 +253,45 @@ button:hover {
 /* seção tres  */
 
 #secao3 {
-  background-color: #457B9D;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+    background-color: #457B9D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
 
 .sobreposicao {
-  position: relative;
-  width: 95vw; /* Ocupa quase toda a largura da tela */
-  max-width: 1200px; /* Define um limite para telas muito grandes */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    width: 95vw;
+    /* Ocupa quase toda a largura da tela */
+    max-width: 1200px;
+    /* Define um limite para telas muito grandes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sobreposicao img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
 }
 
 .sobreposicao strong {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-size: 2rem;
-  z-index: 2;
-  text-align: center;
-  max-width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 2rem;
+    z-index: 2;
+    text-align: center;
+    max-width: 90%;
 }
 
 /* seção beneficios/cinco  */
@@ -305,11 +302,12 @@ button:hover {
     max-height: 40%;
     background-color: #457B9D;
     display: flex;
-    padding:2rem;
+    padding: 2rem;
     flex-direction: column;
 }
 
-#beneficios strong,h2 {
+#beneficios strong,
+h2 {
     display: block;
     font-size: 2em;
     margin-block-start: 0.67em;
@@ -321,25 +319,25 @@ button:hover {
 }
 
 .benefits-container {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    gap: 1.5rem;
 }
 
 .benefit-card {
-  background-color: #D5D2FF;
-  color: #1D3557;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: left;
-  transition: transform 0.3s;
+    background-color: #D5D2FF;
+    color: #1D3557;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+    transition: transform 0.3s;
 }
 
 .benefit-card:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 
@@ -363,6 +361,7 @@ button:hover {
     text-align: justify;
     font-size: 1.20rem;
 }
+
 .esquerda strong {
     display: block;
     font-size: 2em;
@@ -429,17 +428,78 @@ button:hover {
     unicode-bidi: isolate;
 }
 
-.section img {
-    margin-top: 3%;
-    width: 95%;
-    height: auto;
-    object-fit: cover;
+/* Tema personalizado */
+.theme-button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: none;
+}
+
+.theme-red {
+    background-color: #ff4d4d;
+}
+
+.theme-blue {
+    background-color: #4da6ff;
+}
+
+.theme-green {
+    background-color: #4dff88;
+}
+
+#quiz {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+}
+
+#quiz div {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#quiz p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #1D3557;
+}
+
+#quiz input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #000000;
     border-radius: 12px;
 }
 
-#transição {
+#resultado {
+    margin: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#seis2 button{
+    border-radius: 15px;
+    border: 0;
+    width: 30%;
+    height: 2rem;
+    background-color: #E63946;
+    color: #ffffff;
+}
+
+#transicao {
     width: 100%;
     height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 500px;
 }
 
 /* --- Footer --- */
@@ -496,4 +556,89 @@ footer .logo p {
     font-size: 0.9rem;
     color: #457B9D;
     margin-top: 1rem;
+}
+
+/* Tablets e abaixo (<= 1024px) */
+@media (max-width: 1024px) {
+    #secao2 {
+        flex-direction: column;
+    }
+
+    #secao2 .esquerda,
+    #secao2 .direita {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .benefits-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Celulares médios e abaixo (<= 768px) */
+@media (max-width: 768px) {
+    .benefits-container {
+        grid-template-columns: 1fr;
+    }
+
+    #pitch {
+        width: 100%;
+        height: auto;
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    #seis1 {
+        flex-direction: column;
+    }
+
+    #seis1 .esquerda,
+    #seis1 .direita {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .carousel img {
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #transicao {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+/* Celulares pequenos e abaixo (<= 480px) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .carousel img {
+        max-height: 200px;
+    }
+
+    .sobreposicao strong {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .benefit-card {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    #transicao {
+        max-height: 200px;
+    }
 }
