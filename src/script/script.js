@@ -1,30 +1,26 @@
-function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.classList.toggle("show");
-}
+document.addEventListener('DOMContentLoaded', () => {
+  // Carrossel
+  const images = [
+    './src/assets/imgs/foto1.webp',
+    './src/assets/imgs/foto2.webp',
+    './src/assets/imgs/foto3.webp'
+  ];
 
-window.addEventListener('DOMContentLoaded', () => {
-    const images = [
-      './src/assets/imgs/foto1.webp',
-      './src/assets/imgs/foto2.webp',
-      './src/assets/imgs/foto3.webp'
-    ];
+  let agora = 0;
+  const imageElement = document.getElementById('carousel-image');
 
-    let agora = 0;
-    const imageElement = document.getElementById('carousel-image');
-
-    document.querySelector('.prev').addEventListener('click', () => {
-      agora = (agora - 1 + images.length) % images.length;
-      imageElement.src = images[agora];
-    });
-
-    document.querySelector('.next').addEventListener('click', () => {
-      agora = (agora + 1) % images.length;
-      imageElement.src = images[agora];
-    });
+  document.querySelector('.prev').addEventListener('click', () => {
+    agora = (agora - 1 + images.length) % images.length;
+    imageElement.src = images[agora];
   });
 
-const themes = ['theme-default', 'theme-dark', 'theme-sepia'];
+  document.querySelector('.next').addEventListener('click', () => {
+    agora = (agora + 1) % images.length;
+    imageElement.src = images[agora];
+  });
+
+  // Tema
+  const themes = ['theme-default', 'theme-dark', 'theme-sepia'];
   let currentThemeIndex = 0;
 
   const body = document.body;
@@ -37,37 +33,44 @@ const themes = ['theme-default', 'theme-dark', 'theme-sepia'];
     body.classList.add(themes[currentThemeIndex]);
   });
 
-const form = document.getElementById('form');
+  // Validação do Formulário
+  const form = document.getElementById('form');
   const nome = document.getElementById('nome');
   const local = document.getElementById('local');
   const categoria = document.getElementById('categoria');
 
-  form.addEventListener('submit', function(event) {
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
     const nomeVal = nome.value.trim();
     const localVal = local.value.trim();
     const categoriaVal = categoria.value;
 
     let errors = [];
 
-    if (!nomeVal) {
-      errors.push('Por favor, preencha o campo Nome.');
-    }
-
-    if (!localVal) {
-      errors.push('Por favor, preencha o campo Endereço.');
-    }
-
-    if (!categoriaVal) {
-      errors.push('Por favor, selecione onde a água está batendo.');
-    }
+    if (!nomeVal) errors.push('Por favor, preencha o campo Nome.');
+    if (!localVal) errors.push('Por favor, preencha o campo Endereço.');
+    if (!categoriaVal) errors.push('Por favor, selecione onde a água está batendo.');
 
     if (errors.length > 0) {
-      event.preventDefault(); // Impede o envio do form
       alert(errors.join('\n'));
+      return;
     }
+
+    const formData = new FormData();
+    formData.append('altura', categoriaVal);
+    formData.append('local', localVal);
+
+    const resposta = await fetch("http://localhost:5000/index", {
+      method: "POST",
+      body: formData
+    });
+
+    const resultado = await resposta.json();
+    document.getElementById("textErro").innerHTML = "Gravidade: " + resultado.gravidade;
   });
 
-document.addEventListener('DOMContentLoaded', () => {
+  // Quiz
   const perguntas = [
     { pergunta: 'O que é um alagamento?', resposta: 'Acúmulo de água em vias públicas' },
     { pergunta: 'O que fazer em caso de enchente?', resposta: 'Procurar abrigo seguro' },
@@ -82,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const quizDiv = document.getElementById('quiz');
-
   perguntas.forEach((p, i) => {
     const div = document.createElement('div');
     div.innerHTML = `
@@ -92,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     quizDiv.appendChild(div);
   });
 
-  // Função para mostrar resultado, definida aqui para acessar as perguntas
   window.mostrarResultado = () => {
     let respostasCorretas = 0;
     perguntas.forEach((p, i) => {
@@ -104,33 +105,3 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('resultado').innerText = `Você acertou ${respostasCorretas} de ${perguntas.length} perguntas.`;
   };
 });
-
-  document.getElementById("form").addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const altura = document.getElementById("categoria").value;
-    const loc = document.getElementById("local").value;
-
-    const form = new FormData();
-    form.append('altura', altura);
-    form.append('local', loc);
-    const resposta = await fetch("http://localhost:5000/index", {
-      method: "POST",
-      body: form
-    });
-
-
-    const resultado = await resposta.json();
-    document.getElementById("textErro").innerHTML = "Gravidade: " + resultado.gravidade;
-  });
-});
-
-function mostrarResultado() {
-  respostasCorretas = 0;
-  perguntas.forEach((p, i) => {
-    const resposta = document.getElementById(`resposta${i}`).value.toLowerCase();
-    if (resposta.includes(p.resposta.toLowerCase())) {
-      respostasCorretas++;
-    }
-  });
-  document.getElementById('resultado').innerText = `Você acertou ${respostasCorretas} de ${perguntas.length} perguntas.`;
-}
