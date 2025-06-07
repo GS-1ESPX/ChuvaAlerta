@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="efeitos.css">
+    <link rel="icon" href="src/assets/imgs/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
@@ -44,12 +46,12 @@
             <button class="prev">&#10094;</button>
             <img id="carousel-image" src="./src/assets/imgs/foto1.webp" alt="Imagem do Carrossel" />
             <button class="next">&#10095;</button>
+            <div class="carousel-text">Chuva Alerta, a solução perfeita para as enchentes</div>
+
         </div>
         <!-- FIM CARROSSEL  -->
         <section class="section" id="secao1">
-            <strong>Como é feita a ChuvaAlerta</strong>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At molestias, atque magnam tenetur eaque et
-                ullam non voluptas. Dolorem quaerat impedit nesciunt.</p>
+            <strong>Veja mais sobre o Chuva Alerta</strong>
             <div id="pitch">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/e2VPZIB8Vys?si=JWFBSZkyBn7rUg0-"
                     title="YouTube video player" frameborder="0"
@@ -100,7 +102,7 @@
         </section>
         <!-- Seção 5: Benefícios -->
         <section id="beneficios" class="section">
-            <h2>💡 Benefícios oferecidos pela solução</h2>
+            <h2>Benefícios oferecidos pela solução</h2>
             <div class="benefits-container">
                 <div class="benefit-card"><strong>Alerta em tempo real:</strong><br>Notificações rápidas sobre chuvas
                     e enchentes.</div>
@@ -142,20 +144,16 @@
                         <option value="Cintura">Cintura</option>
                         <option value="Peito">Peito</option>
                     </select>
-
-                    <button id="btnEnviar" type="submit">Enviar</button>
-
-                    <p id="textErro"></p>
-
-                    <div id="divEstoque">
-                    </div>
-
+                    <button id="btnEnviar">Enviar</button>
                 </form>
             </div>
         </section>
         <div class="section" id="seis2">
-            <strong>Cuidado nessas áreas</strong>
-            <img src="src/assets/imgs/foto1.webp" alt="teste">
+            <strong>Vamos testar o conhecimento?</strong>
+            <div id="quiz">
+            </div>
+            <p id="resultado"></p>
+            <button onclick="mostrarResultado()">Ver Resultado</button>
         </div>
         <img id="transicao" src="src/assets/icons/Group 3.svg" alt="transição da página">
     </main>
@@ -163,7 +161,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="logo">
-            <h2>🌧️ ChuvaAlerta</h2>
+            <h2> ChuvaAlerta</h2>
             <p>Informação e socorro quando você mais precisa.</p>
         </div>
 
@@ -177,7 +175,7 @@
         <div class="contato">
             <p>📞 Defesa Civil: 199</p>
         </div>
-
+        <button id="theme-toggle" title="Trocar tema"> Mudar tema</button>
         <div class="legal">
             <p>© 2025 ChuvaAlerta. Projeto educacional. Todos os direitos reservados.</p>
         </div>
@@ -185,5 +183,4 @@
     <!-- FIM FOOTER  -->
 </body>
 <script src="src/script/script.js"></script>
-
 </html>
