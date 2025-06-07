@@ -428,27 +428,71 @@ h2 {
     unicode-bidi: isolate;
 }
 
-/* Tema personalizado */
-.theme-button {
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    margin: 0 5px;
-    border-radius: 50%;
-    border: none;
+/* Paletas de tema */
+
+body.theme-default {
+  background-color: #D5D2FF;
+  color: #1D3557;
 }
 
-.theme-red {
-    background-color: #ff4d4d;
+body.theme-default a,
+body.theme-default nav a {
+  color: #1D3557;
 }
 
-.theme-blue {
-    background-color: #4da6ff;
+body.theme-default button {
+  background-color: #457B9D;
+  color: white;
 }
 
-.theme-green {
-    background-color: #4dff88;
+body.theme-default button:hover {
+  background-color: #E63946;
 }
+
+/* === */
+
+body.theme-dark {
+  background-color: #1E1E2F;
+  color: #F1FAEE;
+}
+
+body.theme-dark a,
+body.theme-dark nav a {
+  color: #F1FAEE;
+}
+
+body.theme-dark button {
+  background-color: #2B2D42;
+  color: #A8DADC;
+}
+
+body.theme-dark button:hover {
+  background-color: #A8DADC;
+  color: #1E1E2F;
+}
+
+/* === */
+
+body.theme-sepia {
+  background-color: #F4ECD8;
+  color: #4B3832;
+}
+
+body.theme-sepia a,
+body.theme-sepia nav a {
+  color: #4B3832;
+}
+
+body.theme-sepia button {
+  background-color: #C9A66B;
+  color: #4B3832;
+}
+
+body.theme-sepia button:hover {
+  background-color: #7E6651;
+  color: white;
+}
+
 
 #quiz {
     display: grid;
@@ -550,6 +594,14 @@ footer .logo p {
     font-weight: bold;
     color: #457B9D;
     font-size: 1.1rem;
+}
+
+#theme-toggle{
+    border-radius: 15px;
+    border: 0;
+    width: 30%;
+    height: 2rem;
+    color: #ffffff;
 }
 
 .legal p {

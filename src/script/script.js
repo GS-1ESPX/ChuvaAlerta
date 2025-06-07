@@ -17,16 +17,26 @@ document.querySelector('.prev').addEventListener('click', () => {
     imageElement.src = images[agora];
 });
 
-document.querySelector('.next').addEventListener('click', () => {
-    agora = (agora + 1) % images.length;
-    imageElement.src = images[agora];
-});
 
-function setTheme(bgColor, textColor = '#000') {
-  document.body.style.backgroundColor = bgColor;
-  document.body.style.color = textColor;
-}
+const themes = ['theme-default', 'theme-dark', 'theme-sepia'];
+  let currentThemeIndex = 0;
 
+  const body = document.body;
+  const btn = document.getElementById('theme-toggle');
+
+  // Inicializa com o tema padrão
+  body.classList.add(themes[currentThemeIndex]);
+
+  btn.addEventListener('click', () => {
+    // Remove a classe do tema atual
+    body.classList.remove(themes[currentThemeIndex]);
+
+    // Incrementa índice do tema (loopando)
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+
+    // Adiciona a nova classe do tema
+    body.classList.add(themes[currentThemeIndex]);
+  });
 
 // Validação de formulário
 function validarFormulario() {

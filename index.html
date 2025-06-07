@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="efeitos.css">
+    <link rel="icon" href="src/assets/imgs/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
@@ -158,7 +160,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="logo">
-            <h2>🌧️ ChuvaAlerta</h2>
+            <h2> ChuvaAlerta</h2>
             <p>Informação e socorro quando você mais precisa.</p>
         </div>
 
@@ -172,11 +174,7 @@
         <div class="contato">
             <p>📞 Defesa Civil: 199</p>
         </div>
-        <div>
-            <button class="theme-button theme-red" onclick="setTheme('#ffcccc')"></button>
-            <button class="theme-button theme-blue" onclick="setTheme('#cce6ff')"></button>
-            <button class="theme-button theme-green" onclick="setTheme('#fff5cc', '#665500')"></button>
-        </div>
+        <button id="theme-toggle" title="Trocar tema"> Mudar tema</button>
         <div class="legal">
             <p>© 2025 ChuvaAlerta. Projeto educacional. Todos os direitos reservados.</p>
         </div>
@@ -184,5 +182,4 @@
     <!-- FIM FOOTER  -->
 </body>
 <script src="src/script/script.js"></script>
-
 </html>
